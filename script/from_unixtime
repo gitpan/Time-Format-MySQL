@@ -1,0 +1,13 @@
+#!perl
+use strict;
+use warnings;
+use Time::Format::MySQL qw(from_unixtime);
+
+eval {
+    print from_unixtime(@ARGV), "\n";
+};
+
+if ($@) {
+    warn $@;
+    print "Usage: from_unixtme <unix time>\n";
+}

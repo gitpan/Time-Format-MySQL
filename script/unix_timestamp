@@ -1,0 +1,13 @@
+#!perl
+use strict;
+use warnings;
+use Time::Format::MySQL qw(unix_timestamp);
+
+eval {
+    print unix_timestamp(@ARGV), "\n";
+};
+
+if ($@) {
+    warn $@;
+    print "Usage: unix_timestamp '%Y-%m-%d %H:%M:%S'\n";
+}
