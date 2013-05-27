@@ -41,6 +41,7 @@
       "runtime" : {
          "requires" : {
             "Time::Piece" : "0",
+            "parent" : "0",
             "perl" : "5.008005"
          }
       },
@@ -53,7 +54,7 @@
    "provides" : {
       "Time::Format::MySQL" : {
          "file" : "lib/Time/Format/MySQL.pm",
-         "version" : "0.01"
+         "version" : "0.02"
       }
    },
    "release_status" : "stable",
@@ -67,5 +68,5 @@
          "web" : "https://github.com/Cside/Time-Format-MySQL"
       }
    },
-   "version" : "0.01"
+   "version" : "0.02"
 }

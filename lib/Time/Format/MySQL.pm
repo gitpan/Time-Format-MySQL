@@ -7,7 +7,7 @@ use Time::Piece ();
 use parent qw(Exporter);
 our @EXPORT = qw(from_unixtime unix_timestamp);
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 
 sub from_unixtime {
     Time::Piece::localtime(shift)->strftime('%Y-%m-%d %H:%M:%S');

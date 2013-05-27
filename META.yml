@@ -27,12 +27,13 @@ no_index:
 provides:
   Time::Format::MySQL:
     file: lib/Time/Format/MySQL.pm
-    version: 0.01
+    version: 0.02
 requires:
   Time::Piece: 0
+  parent: 0
   perl: 5.008005
 resources:
   bugtracker: https://github.com/Cside/Time-Format-MySQL/issues
   homepage: https://github.com/Cside/Time-Format-MySQL
   repository: git://github.com/Cside/Time-Format-MySQL.git
-version: 0.01
+version: 0.02
