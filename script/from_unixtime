@@ -1,6 +1,7 @@
 #!perl
 use strict;
 use warnings;
+use Pod::Usage;
 use Time::Format::MySQL qw(from_unixtime);
 
 eval {
@@ -9,5 +10,15 @@ eval {
 
 if ($@) {
     warn $@;
-    print "Usage: from_unixtme <unix time>\n";
+    pod2usage;
 }
+
+__END__
+
+=encoding utf-8
+
+=head1 SYNOPSIS
+
+  from_unixtme <unix time>
+
+=cut

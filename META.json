@@ -47,6 +47,7 @@
       },
       "test" : {
          "requires" : {
+            "Test::Exception" : "0",
             "Test::More" : "0.98"
          }
       }
@@ -54,7 +55,7 @@
    "provides" : {
       "Time::Format::MySQL" : {
          "file" : "lib/Time/Format/MySQL.pm",
-         "version" : "0.02"
+         "version" : "0.03"
       }
    },
    "release_status" : "stable",
@@ -68,5 +69,5 @@
          "web" : "https://github.com/Cside/Time-Format-MySQL"
       }
    },
-   "version" : "0.02"
+   "version" : "0.03"
 }

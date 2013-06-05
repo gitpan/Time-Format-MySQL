@@ -5,16 +5,21 @@ use warnings;
 use Carp qw(croak);
 use Time::Piece ();
 use parent qw(Exporter);
-our @EXPORT = qw(from_unixtime unix_timestamp);
+our @EXPORT_OK = qw(from_unixtime unix_timestamp);
+our $VERSION = "0.03";
 
-our $VERSION = "0.02";
+my $DEFAULT_FORMAT = '%Y-%m-%d %H:%M:%S';
 
 sub from_unixtime {
-    Time::Piece::localtime(shift)->strftime('%Y-%m-%d %H:%M:%S');
+    my $unixtime = shift or croak('Incorrect parameter count');
+    my $format   = shift || $DEFAULT_FORMAT;
+    Time::Piece::localtime($unixtime)->strftime($format);
 }
 
 sub unix_timestamp {
-    Time::Piece::localtime->strptime(shift, '%Y-%m-%d %H:%M:%S')->epoch;
+    my $datetime = shift or return time;
+    my $format   = shift || $DEFAULT_FORMAT;
+    Time::Piece::localtime->strptime($datetime, $format)->epoch;
 }
 
 1;
@@ -28,7 +33,7 @@ Time::Format::MySQL - provides from_unixtime() and unix_timestamp()
 
 =head1 SYNOPSIS
 
-    use Time::Format::MySQL;
+    use Time::Format::MySQL qw(from_unixtime unix_timestamp)
 
     print from_unixtime(time); #=> 2013-01-11 12:03:28
     print unix_timestamp('2013-01-11 12:03:28'); #=> 1357873408
@@ -41,11 +46,11 @@ Time::Format::MySQL provides mysql-like functions, from_unixtime() and unix_time
 
 =over
 
-=item from_unixtime
+=item from_unixtime($unixtime [, $format])
 
 unix timestamp -> date time
 
-=item unix_timestamp
+=item unix_timestamp($datetime [, $format])
 
 date time -> unix timestamp
 

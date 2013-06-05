@@ -3,6 +3,7 @@ abstract: 'provides from_unixtime() and unix_timestamp()'
 author:
   - 'Hiroki Honda <cside.story@gmail.com>'
 build_requires:
+  Test::Exception: 0
   Test::More: 0.98
 configure_requires:
   CPAN::Meta: 0
@@ -27,7 +28,7 @@ no_index:
 provides:
   Time::Format::MySQL:
     file: lib/Time/Format/MySQL.pm
-    version: 0.02
+    version: 0.03
 requires:
   Time::Piece: 0
   parent: 0
@@ -36,4 +37,4 @@ resources:
   bugtracker: https://github.com/Cside/Time-Format-MySQL/issues
   homepage: https://github.com/Cside/Time-Format-MySQL
   repository: git://github.com/Cside/Time-Format-MySQL.git
-version: 0.02
+version: 0.03
